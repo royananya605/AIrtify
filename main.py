@@ -1,6 +1,4 @@
-# Van Gogh Style Transfer Model - Fixed Dtype Issues
-# This version fixes the float16/float32 dtype mismatch error
-
+# Van Gogh Style Transfer Model
 import tensorflow as tf
 import pandas as pd
 import numpy as np
@@ -347,7 +345,7 @@ print("\n=== CREATING DEMO CONTENT IMAGE ===")
 
 def create_demo_content():
     """Create a simple demo content image"""
-    img = np.zeros((400, 400, 3), dtype=np.float32)  # Ensure float32
+    img = np.zeros((400, 400, 3), dtype=np.float32) 
 
     # Sky (blue gradient)
     for y in range(200):
