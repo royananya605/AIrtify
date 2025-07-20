@@ -1,29 +1,37 @@
-# VanGoghify
-# 🎨 Van Gogh Style Transfer with TensorFlow
+# 🎨 AIrtify
 
-[![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)](https://www.python.org/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://www.tensorflow.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-This project implements an end-to-end Neural Style Transfer (NST) pipeline that applies **Vincent van Gogh’s painting style** to any image using TensorFlow and VGG19. It includes fallbacks in case real Van Gogh images are unavailable by generating sample Van Gogh-style images from scratch.
+This project demonstrates how to perform **Neural Style Transfer**, transforming an image by combining the content of one image with the artistic style of another using a pre-trained model from TensorFlow Hub.
 
 ---
 
-## 🖼️ Example Output
+## Output Example
 
-| Original Image | Style Image | Stylized Result |
-|----------------|-------------|------------------|
-| ![Original](demo_images/original.png) | ![Style](demo_images/style1.png) | ![Stylized](demo_images/stylized.png) |
-
-> *(Run the script to generate and save your own demo images)*
+| Original Content & Reference Style | Stylized Output |
+|:--:|:--:|
+| ![Content & Style](./Screenshot%202025-07-21%20012510.png) | ![Stylized Output](./Screenshot%202025-07-21%20012529.png) |
 
 ---
 
-## 📌 Features
+## 📌 About
 
--  End-to-end **Neural Style Transfer** with fine-grained loss functions
--  Uses pretrained **VGG19** as the feature extractor
--  Automatically checks for real Van Gogh images or generates style samples
--  Supports **GPU acceleration** via TensorFlow
--  Clear separation between style and content loss
--  Fully **self-contained**, no external style libraries needed
+The script:
+- Loads a **content image** (e.g., cartoon ducks)
+- Loads a **style reference image** (e.g., Monet-like painting)
+- Uses TensorFlow Hub's `arbitrary-image-stylization-v1-256` model
+- Produces a **stylized output image** using the reference style
+
+---
+
+## Model Used
+
+- [Arbitrary Image Stylization V1](https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2)
+  - Developed by Google Magenta
+  - Supports any content-style combination
+
+---
+
+### Install dependencies
+
+```bash
+pip install tensorflow tensorflow_hub matplotlib pillow
+
